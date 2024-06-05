@@ -1,0 +1,3 @@
+This is a repo containing the Dockerfile for a PostgreSQL database.
+Temporary data for testing purpose will also be stored.
+This database will be used by the Vike and Sell organization for the developement of the SENG 499 capstone project.
