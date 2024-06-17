@@ -1,0 +1,26 @@
+apiVersion: kubegres.reactive-tech.io/v1
+kind: Kubegres
+metadata:
+  name: vikegres
+  namespace: default
+
+spec:
+
+   replicas: 3
+   image: postgres:16.1
+
+   database:
+      size: 1Gi
+
+   env:
+      - name: POSTGRES_PASSWORD
+        valueFrom:
+           secretKeyRef:
+              name: db-secret
+              key: superUserPassword
+
+      - name: POSTGRES_REPLICATION_PASSWORD
+        valueFrom:
+           secretKeyRef:
+              name: db-secret
+              key: replicationUserPassword

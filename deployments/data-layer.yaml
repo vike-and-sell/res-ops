@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: data_layer_deploy
+  labels:
+    app: data-layer
+
+spec:
+
+  replicas: 1
+  selector:
+    matchLabels:
+      app: data-layer
+
+  template:
+    metadata:
+      labels:
+        app: data-layer
+
+    spec:
+    
+      containers:
+        - name: data-layer
+          image: charliewager/flask_data_layer
+          ports:
+            - containerPort: 4000
+          env:
+            - name: RDS_USERNAME
+              value: postgres
+
+            - name: RDS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: superUserPassword
+
+            - name: RDS_HOSTNAME-PRIMARY
+              value: vikegres
+
+            - name: RDS_HOSTNAME-REPLICA
+              value: vikegres-replica
+
+            - name: RDS_PORT
+              value: '5432'
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+            limits:
+              memory: "1Gi"
+              cpu: "1"
