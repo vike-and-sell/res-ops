@@ -24,13 +24,13 @@ spec:
            secretKeyRef:
               name: db-secret
               key: replicationUserPassword
-   
-   affinity:
-     nodeAffinity:
-       requiredDuringSchedulingIgnoredDuringExecution:
-         nodeSelectorTerms:
-           - matchExpressions:
-               - key: kubernetes.io/hostname
-                 operator: NotIn
-                 values:
-                   - nodeuser-virtualbox
+   scheduler:
+      affinity:
+         nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+               nodeSelectorTerms:
+                  - matchExpressions:
+                     - key: kubernetes.io/hostname
+                       operator: NotIn
+                       values:
+                        - nodeuser-virtualbox
