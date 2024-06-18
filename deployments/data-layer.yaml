@@ -42,6 +42,10 @@ spec:
 
             - name: RDS_PORT
               value: '5432'
+              
+            - name: RDS_DB_NAME
+              value: vike_and_sell_db
+
           resources:
             requests:
               memory: "256Mi"
