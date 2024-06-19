@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: data_layer_deploy
+  name: data-layer-deploy
   labels:
     app: data-layer
 
