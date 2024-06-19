@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: elastic-layer-clusterIP
+  name: elastic-layer-cluster-ip
   labels:
     app: elastic-layer
 spec:
