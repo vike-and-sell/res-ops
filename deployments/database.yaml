@@ -10,7 +10,7 @@ spec:
    image: postgres:16.1
 
    database:
-      size: 1Gi
+      size: 2Gi
 
    env:
       - name: POSTGRES_PASSWORD
