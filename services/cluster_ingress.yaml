@@ -20,10 +20,11 @@ spec:
             port:
               number: 80
 
-      - path: /elastic-layer
-        pathType: Prefix
-        backend:
-          service:
-            name: elastic-layer-clusterIP
-            port:
-              number: 80
+      # uncomment when elastic layer is up
+      # - path: /elastic-layer
+      #   pathType: Prefix
+      #   backend:
+      #     service:
+      #       name: elastic-layer-clusterIP
+      #       port:
+      #         number: 80
