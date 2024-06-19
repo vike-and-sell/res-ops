@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+
+metadata:
+  name: cluster-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+
+spec:
+  rules:
+  - host: vs.cluster.ca
+    http:
+      paths:
+
+      - path: /data-layer
+        pathType: Prefix
+        backend:
+          service:
+            name: data-layer-clusterIP
+            port:
+              number: 80
+
+      - path: /elastic-layer
+        pathType: Prefix
+        backend:
+          service:
+            name: elastic-layer-clusterIP
+            port:
+              number: 80

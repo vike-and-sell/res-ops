@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: data-layer-clusterIP
+  name: elastic-layer-clusterIP
   labels:
-    app: data-layer
+    app: elastic-layer
 spec:
   selector:
-    app: data-layer
+    app: elastic-layer
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 4000
+      targetPort: 4500
