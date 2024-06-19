@@ -16,7 +16,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: data-layer-clusterIP
+            name: data-layer-cluster-ip
             port:
               number: 80
 
@@ -25,6 +25,6 @@ spec:
       #   pathType: Prefix
       #   backend:
       #     service:
-      #       name: elastic-layer-clusterIP
+      #       name: elastic-layer-cluster-ip
       #       port:
       #         number: 80
