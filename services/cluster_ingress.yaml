@@ -3,6 +3,8 @@ kind: Ingress
 
 metadata:
   name: cluster-ingress
+  labels:
+    app: cluster-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 
