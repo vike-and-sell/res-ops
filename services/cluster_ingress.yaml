@@ -5,6 +5,7 @@ metadata:
   name: cluster-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: public
 
 spec:
   rules:
