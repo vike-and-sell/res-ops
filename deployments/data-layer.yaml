@@ -44,7 +44,7 @@ spec:
               value: '5432'
               
             - name: RDS_DB_NAME
-              value: vike_and_sell_db
+              value: postgres
 
           resources:
             requests:
