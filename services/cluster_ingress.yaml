@@ -11,7 +11,7 @@ metadata:
 spec:
   ingressClassName: public
   rules:
-  - host: vs.cluster.ca
+  - host: vs.cluster.com
     http:
       paths:
 
