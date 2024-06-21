@@ -34,7 +34,7 @@ spec:
                   name: db-secret
                   key: superUserPassword
 
-            - name: RDS_HOSTNAME-PRIMARY
+            - name: RDS_HOSTNAME
               value: vikegres
 
             - name: RDS_HOSTNAME-REPLICA
