@@ -17,38 +17,23 @@ spec:
         app: elastic-layer
 
     spec:
-    
+
       containers:
-        - name: elastic-layer
-          image: charliewager/flask_elastic_layer
-          ports:
-            - containerPort: 4500
-          env:
-            - name: RDS_USERNAME
-              value: postgres
+      - name: elastic-layer
+        image: charliewager/flask_elastic_layer
+        ports:
+        - containerPort: 4500
+        env:
+        - name: ELASTIC_PASSWORD
+          value: postgres
 
-            - name: RDS_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: db-secret
-                  key: superUserPassword
+        - name: DATALAYER_HOST
+          value: 10.152.183.106:80
 
-            - name: RDS_HOSTNAME-PRIMARY
-              value: vikegres
-
-            - name: RDS_HOSTNAME-REPLICA
-              value: vikegres-replica
-
-            - name: RDS_PORT
-              value: '5432'
-              
-            - name: RDS_DB_NAME
-              value: vike_and_sell_db
-
-          resources:
-            requests:
-              memory: "128Mi"
-              cpu: "250m"
-            limits:
-              memory: "1Gi"
-              cpu: "1"
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "1"
