@@ -44,7 +44,7 @@ kibanaConfig:
   kibana.yml: |
     elasticsearch.hosts: ["http://elasticsearch-master:9200"]
     elasticsearch.username: "elastic"
-    elasticsearch.password: "your_password_here" # Set this to the same password used in the Elasticsearch setup
+    elasticsearch.password: "3lastic.Pass"
 
 podSecurityContext:
   fsGroup: 1000
