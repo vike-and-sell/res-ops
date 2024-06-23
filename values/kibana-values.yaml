@@ -1,8 +1,4 @@
 elasticsearchHosts: "http://elasticsearch-master:9200"
-# Remove the following as we are not using SSL
-# elasticsearchCertificateSecret: elasticsearch-master-certs
-# elasticsearchCertificateAuthoritiesFile: ca.crt
-elasticsearchCredentialSecret: elasticsearch-master-credentials
 
 replicas: 1
 
@@ -42,6 +38,7 @@ healthCheckPath: "/app/kibana"
 
 kibanaConfig:
   kibana.yml: |
+    server.host: "0.0.0.0"
     elasticsearch.hosts: ["http://elasticsearch-master:9200"]
     elasticsearch.username: "elastic"
     elasticsearch.password: "3lastic.Pass"
@@ -79,7 +76,7 @@ service:
   type: NodePort
   loadBalancerIP: ""
   port: 5601
-  nodePort: 32000 # You can set this to a specific port, or leave it empty to let Kubernetes choose
+  nodePort: 35000
   labels: {}
   annotations: {}
   loadBalancerSourceRanges: []
