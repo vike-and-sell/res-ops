@@ -20,16 +20,28 @@ minimumMasterNodes: 1
 
 esMajorVersion: ""
 
+createCert: false
+
 esConfig:
   elasticsearch.yml: |
     xpack.security.http.ssl.enabled: false
     xpack.license.self_generated.type: trial
+  elasticsearch.policy: |
+    grant {
+        permission java.lang.RuntimePermission "modifyThread";
+    };
 
-createCert: false
+extraEnvs:
+- name: ES_JAVA_OPTS
+  value: "-Djava.security.policy=/usr/share/elasticsearch/config/elasticsearch.policy"
+
+extraVolumeMounts:
+- name: elasticsearch-config
+  mountPath: /usr/share/elasticsearch/config/elasticsearch.policy
+  subPath: elasticsearch.policy
+  readOnly: true
 
 esJvmOptions: {}
-
-extraEnvs: []
 
 envFrom: []
 
@@ -102,8 +114,6 @@ persistence:
   annotations: {}
 
 extraVolumes: []
-
-extraVolumeMounts: []
 
 extraContainers: []
 
