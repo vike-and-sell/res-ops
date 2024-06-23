@@ -27,7 +27,9 @@ esConfig:
 
 createCert: false
 
-esJvmOptions: {}
+esJvmOptions:
+  JVM_OPTS_APPEND: "-Djava.security.policy=grant { permission java.lang.RuntimePermission \"modifyThread\"; };"
+
 
 extraEnvs: []
 
