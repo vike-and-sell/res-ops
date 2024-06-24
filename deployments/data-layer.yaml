@@ -18,39 +18,45 @@ spec:
         app: data-layer
 
     spec:
-    
+
       containers:
-        - name: data-layer
-          image: charliewager/flask_data_layer:beta
-          ports:
-            - containerPort: 4000
-          env:
-            - name: RDS_USERNAME
-              value: postgres
+      - name: data-layer
+        image: charliewager/flask_data_layer:v1
+        ports:
+        - containerPort: 4000
+        env:
+        - name: RDS_USERNAME
+          value: postgres
 
-            - name: RDS_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: db-secret
-                  key: superUserPassword
+        - name: RDS_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: db-secret
+              key: superUserPassword
 
-            - name: RDS_HOSTNAME
-              value: vikegres
+        - name: RDS_HOSTNAME
+          value: vikegres
 
-            - name: RDS_HOSTNAME-REPLICA
-              value: vikegres-replica
+        - name: RDS_HOSTNAME-REPLICA
+          value: vikegres-replica
 
-            - name: RDS_PORT
-              value: '5432'
-              
-            - name: RDS_DB_NAME
-              value: postgres
+        - name: RDS_PORT
+          value: '5432'
 
-          resources:
-            requests:
-              memory: "256Mi"
-              cpu: "250m"
-            limits:
-              memory: "1Gi"
-              cpu: "1"
-          imagePullPolicy: Always
+        - name: RDS_DB_NAME
+          value: postgres
+
+        - name: ENCRYPTION_KEY
+          valueFrom:
+            secretKeyRef:
+              name: pgcrypto-passphrase
+              key: PASSPHRASE
+
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "1"
+        imagePullPolicy: Always
