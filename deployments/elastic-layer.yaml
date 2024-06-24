@@ -20,7 +20,7 @@ spec:
 
       containers:
       - name: elastic-layer
-        image: charliewager/flask_elastic_layer
+        image: charliewager/flask_elastic_layer:beta
         ports:
         - containerPort: 4500
         env:
@@ -40,5 +40,5 @@ spec:
           limits:
             memory: "1Gi"
             cpu: "1"
-            
+
         imagePullPolicy: Always
