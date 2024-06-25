@@ -52,6 +52,12 @@ spec:
               name: pgcrypto-passphrase
               key: PASSPHRASE
 
+        - name: API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: vs-api-key
+              key: API_KEY
+
         resources:
           requests:
             memory: "256Mi"
