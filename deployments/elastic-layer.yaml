@@ -20,7 +20,7 @@ spec:
 
       containers:
       - name: elastic-layer
-        image: charliewager/flask_elastic_layer:beta
+        image: charliewager/flask_elastic_layer:v1
         ports:
         - containerPort: 4500
         env:
