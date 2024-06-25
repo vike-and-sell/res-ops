@@ -26,12 +26,18 @@ spec:
         env:
         - name: ELASTIC_PASSWORD
           valueFrom:
-                secretKeyRef:
-                  name: elasticsearch-master-credentials
-                  key: password
+            secretKeyRef:
+              name: elasticsearch-master-credentials
+              key: password
 
-        - name: DATALAYER_HOST
-          value: 10.152.183.106:80
+        - name: DATA_URL
+          value: data-layer-cluster-ip:80
+
+        - name: DATA_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: vs-api-key
+              key: API_KEY
 
         resources:
           requests:
