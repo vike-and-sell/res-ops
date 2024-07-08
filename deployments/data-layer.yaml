@@ -21,7 +21,7 @@ spec:
 
       containers:
       - name: data-layer
-        image: charliewager/flask_data_layer:v10
+        image: charliewager/flask_data_layer:v11
         ports:
         - containerPort: 4000
         env:
