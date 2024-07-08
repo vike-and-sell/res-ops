@@ -21,7 +21,7 @@ spec:
 
       containers:
       - name: data-layer
-        image: charliewager/flask_data_layer:v7
+        image: charliewager/flask_data_layer:v8
         ports:
         - containerPort: 4000
         env:
@@ -33,6 +33,12 @@ spec:
             secretKeyRef:
               name: db-secret
               key: superUserPassword
+
+        - name: RDS_PASSWORD-REPLICA
+          valueFrom:
+            secretKeyRef:
+              name: db-secret
+              key: replicationUserPassword
 
         - name: RDS_HOSTNAME
           value: vikegres
