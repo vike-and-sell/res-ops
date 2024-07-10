@@ -70,7 +70,7 @@ volumeClaimTemplate:
   resources:
     requests:
       storage: 30Gi
-  storageClassName: "nfs" # Ensure this matches your NFS storage class name
+  storageClassName: "openebs-jiva-csi-default"
 
 rbac:
   create: false
