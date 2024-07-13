@@ -12,6 +12,8 @@ spec:
    database:
       size: 2Gi
 
+   customConfig: db-config
+
    env:
       - name: POSTGRES_PASSWORD
         valueFrom:
