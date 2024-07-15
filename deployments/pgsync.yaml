@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pgsync-deploy
+  labels:
+    app: pgsync
+
+spec:
+
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pgsync
+
+  template:
+    metadata:
+      labels:
+        app: pgsync
+
+    spec:
+
+      containers:
+      - name: data-layer
+        image: charliewager/pgsync:v1
+
+        # all envs located in .env file
+
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "1"
+        imagePullPolicy: Always
