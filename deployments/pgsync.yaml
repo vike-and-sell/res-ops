@@ -21,7 +21,7 @@ spec:
 
       containers:
       - name: pgsync
-        image: charliewager/pgsync:v2
+        image: charliewager/pgsync:v3
 
         # all envs located in .env file
 
