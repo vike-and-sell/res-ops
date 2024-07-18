@@ -9,6 +9,5 @@ COPY . .
 RUN pip install pgsync
 
 # PGSync init
-RUN bootstrap --config schema/schema.json
 
-CMD ["pgsync", "--config schema/schema.json", "--daemon"]
+CMD ["./pg_run.sh"]
