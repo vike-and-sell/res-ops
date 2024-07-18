@@ -20,7 +20,7 @@ spec:
     spec:
 
       containers:
-      - name: data-layer
+      - name: pgsync
         image: charliewager/pgsync:v1
 
         # all envs located in .env file
