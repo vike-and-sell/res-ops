@@ -21,9 +21,44 @@ spec:
 
       containers:
       - name: pgsync
-        image: charliewager/pgsync:v4
+        image: charliewager/pgsync:v5
 
-        # all envs located in .env file
+        env:
+        - name: PG_USER
+          value: postgres
+
+        - name: PG_HOST
+          value: vikegres
+
+        - name: PG_PORT
+          value: 5432
+
+        - name: PG_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: db-secret
+              key: superUserPassword
+
+        - name: LOG_LEVEL
+          value: "INFO"
+
+        - name: ELASTICSEARCH_PORT
+          value: 9200
+
+        - name: ELASTICSEARCH_SCHEME
+          value: "http"
+
+        - name: ELASTICSEARCH_HOST
+          value: elasticsearch-master
+
+        - name: REDIS_HOST
+          value: redis
+
+        - name: REDIS_PORT
+          value: 6379
+
+        - name: ELASTICSEARCH
+          value: "true"
 
         resources:
           requests:

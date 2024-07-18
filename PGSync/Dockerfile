@@ -3,7 +3,7 @@ FROM python:3.12-slim
 WORKDIR /pgsync
 
 # This copies the schema.json and the .env file to the image
-COPY .env .
+# COPY .env .
 COPY pg_run.sh .
 COPY schema .
 
