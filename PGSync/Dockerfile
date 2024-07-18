@@ -9,5 +9,5 @@ COPY . .
 RUN pip install pgsync
 
 # PGSync init
-
+RUN chmod +x pg_run.sh
 CMD ["./pg_run.sh"]
