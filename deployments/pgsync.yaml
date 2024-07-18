@@ -31,7 +31,7 @@ spec:
           value: vikegres
 
         - name: PG_PORT
-          value: 5432
+          value: '5432'
 
         - name: PG_PASSWORD
           valueFrom:
@@ -43,7 +43,7 @@ spec:
           value: "INFO"
 
         - name: ELASTICSEARCH_PORT
-          value: 9200
+          value: '9200'
 
         - name: ELASTICSEARCH_SCHEME
           value: "http"
@@ -55,7 +55,7 @@ spec:
           value: redis
 
         - name: REDIS_PORT
-          value: 6379
+          value: '6379'
 
         - name: ELASTICSEARCH
           value: "true"
