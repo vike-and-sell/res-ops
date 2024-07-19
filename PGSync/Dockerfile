@@ -5,7 +5,7 @@ WORKDIR /pgsync
 # This copies the schema.json and the .env file to the image
 # COPY .env .
 COPY pg_run.sh .
-COPY schema .
+COPY schema/schema.json .
 
 # Intall pgsync
 RUN pip install pgsync
