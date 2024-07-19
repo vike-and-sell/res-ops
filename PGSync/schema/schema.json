@@ -18,7 +18,7 @@
             ],
             "children" : [
                 {
-                    "table" : "Ignored",
+                    "table" : "ignored",
                     "columns" : [
                         "user_id",
                         "listing_id"
@@ -48,7 +48,7 @@
             ],
             "children" : [
                 {
-                    "table" : "Searches",
+                    "table" : "searches",
                     "columns" : [
                         "user_id",
                         "search_text",
