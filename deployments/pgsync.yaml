@@ -21,7 +21,7 @@ spec:
 
       containers:
       - name: pgsync
-        image: charliewager/pgsync:v12
+        image: charliewager/pgsync:v13
 
         env:
         - name: PG_USER
