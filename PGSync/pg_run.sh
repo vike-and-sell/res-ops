@@ -2,4 +2,4 @@
 
 bootstrap --config schema.json
 
-pgsync --config schema.json --daemon --polling
+pgsync --config schema.json --polling
